@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="post" id="myForm">
+
+        <fieldset>
+            <legend>How many moves?</legend>
+            <label>
+                <input type="radio" name="q1" value="20" checked> 20
+            </label>
+            <label>
+                <input type="radio" name="q1" value="30"> 30
+            </label>
+            <label>
+                <input type="radio" name="q1" value="40"> 40
+            </label>
+            <label>
+                <input type="radio" name="q1" value="50"> 50
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>how much times between moves?</legend>
+            <label>
+                <input type="radio" name="q2" value="3000" checked> 3s
+            </label>
+            <label>
+                <input type="radio" name="q2" value="5000"> 5s
+            </label>
+            <label>
+                <input type="radio" name="q2" value="7000"> 7s
+            </label>
+            <label>
+                <input type="radio" name="q2" value="10000"> 10s
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>how many reps?</legend>
+            <label>
+                <input type="radio" name="q3" value="1" checked> 1
+            </label>
+            <label>
+                <input type="radio" name="q3" value="2"> 2
+            </label>
+            <label>
+                <input type="radio" name="q3" value="3"> 3
+            </label>
+            <label>
+                <input type="radio" name="q3" value="4"> 4
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>rest between reps?</legend>
+            <label>
+                <input type="radio" name="q4" value="1" checked> 1 min
+            </label>
+            <label>
+                <input type="radio" name="q4" value="2"> 2 min
+            </label>
+            <label>
+                <input type="radio" name="q4" value="3"> 3 min
+            </label>
+            <label>
+                <input type="radio" name="q4" value="4"> 4 min
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>how many sets?</legend>
+            <label>
+                <input type="radio" name="q5" value="1" checked> 1
+            </label>
+            <label>
+                <input type="radio" name="q5" value="2"> 2
+            </label>
+            <label>
+                <input type="radio" name="q5" value="3"> 3
+            </label>
+            <label>
+                <input type="radio" name="q5" value="4"> 4
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>rest between sets?</legend>
+            <label>
+                <input type="radio" name="q6" value="5" checked> 5
+            </label>
+            <label>
+                <input type="radio" name="q6" value="10"> 10
+            </label>
+        </fieldset>
+
+        <button>Start!</button>
+    </form>
+
+    <div class="move" style="margin: 60px;">
+        <p>Next move</p>
+        <p id="move"></p>
+    </div>
+
+    <div class="wall" id="wall">
+        <div class="hold" id="I1"></div>
+        <div class="hold" id="I2"></div>
+        <div class="hold" id="I3"></div>
+        <div class="hold" id="I4"></div>
+        <div class="hold" id="I5"></div>
+        <div class="hold" id="I6"></div>
+        <div class="hold" id="I7"></div>
+        <div class="hold" id="H1"></div>
+        <div class="hold" id="H2"></div>
+        <div class="hold" id="H3"></div>
+        <div class="hold" id="H4"></div>
+        <div class="hold" id="H5"></div>
+        <div class="hold" id="H6"></div>
+        <div class="hold" id="H7"></div>
+        <div class="hold" id="G1"></div>
+        <div class="hold" id="G2"></div>
+        <div class="hold" id="G3"></div>
+        <div class="hold" id="G4"></div>
+        <div class="hold" id="G5"></div>
+        <div class="hold" id="G6"></div>
+        <div class="hold" id="G7"></div>
+        <div class="hold" id="F1"></div>
+        <div class="hold" id="F2"></div>
+        <div class="hold" id="F3"></div>
+        <div class="hold" id="F4"></div>
+        <div class="hold" id="F5"></div>
+        <div class="hold" id="F6"></div>
+        <div class="hold" id="F7"></div>
+        <div class="hold" id="E1"></div>
+        <div class="hold" id="E2"></div>
+        <div class="hold" id="E3"></div>
+        <div class="hold" id="E4"></div>
+        <div class="hold" id="E5"></div>
+        <div class="hold" id="E6"></div>
+        <div class="hold" id="E7"></div>
+        <div class="hold" id="D1"></div>
+        <div class="hold" id="D2"></div>
+        <div class="hold" id="D3"></div>
+        <div class="hold" id="D4"></div>
+        <div class="hold" id="D5"></div>
+        <div class="hold" id="D6"></div>
+        <div class="hold" id="D7"></div>
+        <div class="hold" id="C1"></div>
+        <div class="hold" id="C2"></div>
+        <div class="hold" id="C3"></div>
+        <div class="hold" id="C4"></div>
+        <div class="hold" id="C5"></div>
+        <div class="hold" id="C6"></div>
+        <div class="hold" id="C7"></div>
+        <div class="hold" id="B1"></div>
+        <div class="hold" id="B2"></div>
+        <div class="hold" id="B3"></div>
+        <div class="hold" id="B4"></div>
+        <div class="hold" id="B5"></div>
+        <div class="hold" id="B6"></div>
+        <div class="hold" id="B7"></div>
+        <div class="hold" id="A1"></div>
+        <div class="hold" id="A2"></div>
+        <div class="hold" id="A3"></div>
+        <div class="hold" id="A4"></div>
+        <div class="hold" id="A5"></div>
+        <div class="hold" id="A6"></div>
+        <div class="hold" id="A7"></div>
+    </div>
+
+
+    <script>
+
+        var myAnswers = []
+        var moveCount = 0
+        var MoveInterval = 0
+        let tellMove = new SpeechSynthesisUtterance()
+        var elements
+        var currentNumber
+        var currentLetter
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+            startFunction()
+
+            MoveInterval = setInterval(generateRandomPair, myAnswers[1]);
+
+
+        });
+
+        function startFunction() {
+            var q1 = document.querySelector('input[name="q1"]:checked').value;
+            var q2 = document.querySelector('input[name="q2"]:checked').value;
+            var q3 = document.querySelector('input[name="q3"]:checked').value;
+            var q4 = document.querySelector('input[name="q4"]:checked').value;
+            var q5 = document.querySelector('input[name="q5"]:checked').value;
+            var q6 = document.querySelector('input[name="q6"]:checked').value;
+
+            myAnswers = [q1, q2, q3, q4, q5, q6]
+        }
+
+        function generateRandomPair() {
+            // Generate a random letter between A and I
+            var randomLetter = (moveCount == 0 ? String.fromCharCode(65 + Math.floor(Math.random() * 1)) : String.fromCharCode(65 + Math.floor(Math.random() * 9))) // ASCII code for 'A' is 65
+
+            // Generate a random number between 1 and 7
+
+            var randomNumber = Math.floor(Math.random() * 7) + 1;
+
+            // Combine the random letter and number into a pair
+            var randomPair = randomLetter + randomNumber;
+
+            //clear circle
+
+            elements = document.querySelectorAll('*');
+
+            elements.forEach((element) => {
+                element.classList.remove('circle');
+            });
+
+
+            // Display the random pair
+            document.getElementById("move").textContent = randomPair
+
+            tellMove.text = randomPair
+
+            window.speechSynthesis.speak(tellMove)
+
+            //add circle
+
+            document.getElementById(`${randomPair}`).classList.add("circle");
+
+            moveCount++
+
+            if (moveCount == (parseInt(myAnswers[0]) + 1)) {
+                clearInterval(MoveInterval)
+                document.getElementById("move").textContent = "ruta terminada!!!"
+                tellMove.text = "ruta terminada!!!"
+                window.speechSynthesis.speak(tellMove)
+            }
+
+            return randomPair
+        }
+    </script>
+    <style>
+        .wall {
+            /* Background pattern from Toptal Subtle Patterns */
+            height: 430px;
+            width: 340px;
+            background-image: url(background.png);
+            background-repeat: no-repeat;
+            background-size: auto;
+            display: grid;
+            grid-template-rows: 47.7px 47.7px 47.7px 47.7px 47.7px 47.7px 47.7px 47.7px 47.7px;
+            grid-template-columns: 48.5px 48.5px 48.5px 48.5px 48.5px 48.5px 48.5px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 45px;
+            /* Set the width and height to define the size of the circle */
+            height: 45px;
+            background-color: rgba(16, 69, 182, 0.7);
+            /* Set the background color and adjust the alpha (opacity) as needed */
+            border-radius: 50%;
+            /* Use border-radius to create a circle by setting it to 50% */
+            position: relative;
+            /* Position the circle relative to its containing element */
+
+        }
+    </style>
+</body>
+
+</html>
