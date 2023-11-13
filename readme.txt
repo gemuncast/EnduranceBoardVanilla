@@ -1,18 +1,18 @@
 Board Set Up
 
    A   B   C   D   E   F   G
-1  J   P   C   J   S   C   J
-2  C   S   P   J   C   S   P
-3  J   C   S   P   J   C   S
-4  S   P   J   C   S   P   J
-5  C   S   P   J   C   S   P
-6  J   C   S   P   J   C   S
-7  S   P   J   C   S   P   J
+9  J   P   C   J   S   C   J
 8  C   S   P   J   C   S   P
-9  J   C   S   P   J   C   S
-10 F   F   F   F   F   F   F
-11 F   F   F   F   F   F   F
-12 F   F   F   F   F   F   F
+7  J   C   S   P   J   C   S
+6  S   P   J   C   S   P   J
+5  C   S   P   J   C   S   P
+4  J   C   S   P   J   C   S
+3  S   P   J   C   S   P   J
+2  C   S   P   J   C   S   P
+1  J   C   S   P   J   C   S
+   F   F   F   F   F   F   F
+   F   F   F   F   F   F   F
+   F   F   F   F   F   F   F
 
 F = foothold
 J = jug
