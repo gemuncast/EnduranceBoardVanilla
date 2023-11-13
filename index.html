@@ -146,42 +146,42 @@
         <div class="hold" id="E7"></div>
         <div class="hold" id="F7"></div>
         <div class="hold" id="G7"></div>
-        <div class="hold" id="A6"></div> 
+        <div class="hold" id="A6"></div>
         <div class="hold" id="B6"></div>
         <div class="hold" id="C6"></div>
         <div class="hold" id="D6"></div>
         <div class="hold" id="E6"></div>
         <div class="hold" id="F6"></div>
         <div class="hold" id="G6"></div>
-        <div class="hold" id="A5"></div> 
+        <div class="hold" id="A5"></div>
         <div class="hold" id="B5"></div>
         <div class="hold" id="C5"></div>
         <div class="hold" id="D5"></div>
         <div class="hold" id="E5"></div>
         <div class="hold" id="F5"></div>
         <div class="hold" id="G5"></div>
-        <div class="hold" id="A4"></div> 
+        <div class="hold" id="A4"></div>
         <div class="hold" id="B4"></div>
         <div class="hold" id="C4"></div>
         <div class="hold" id="D4"></div>
         <div class="hold" id="E4"></div>
         <div class="hold" id="F4"></div>
         <div class="hold" id="G4"></div>
-        <div class="hold" id="A3"></div> 
+        <div class="hold" id="A3"></div>
         <div class="hold" id="B3"></div>
         <div class="hold" id="C3"></div>
         <div class="hold" id="D3"></div>
         <div class="hold" id="E3"></div>
         <div class="hold" id="F3"></div>
         <div class="hold" id="G3"></div>
-        <div class="hold" id="A2"></div> 
+        <div class="hold" id="A2"></div>
         <div class="hold" id="B2"></div>
         <div class="hold" id="C2"></div>
         <div class="hold" id="D2"></div>
         <div class="hold" id="E2"></div>
         <div class="hold" id="F2"></div>
         <div class="hold" id="G2"></div>
-        <div class="hold" id="A1"></div> 
+        <div class="hold" id="A1"></div>
         <div class="hold" id="B1"></div>
         <div class="hold" id="C1"></div>
         <div class="hold" id="D1"></div>
@@ -191,7 +191,7 @@
 
 
 
-        
+
     </div>
 
 
@@ -227,16 +227,49 @@
         }
 
         function generateRandomPair() {
+
+            //Move Generation
+
+            //no Logic just random
             // Generate a random letter between A and G
             var randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 7)) // ASCII code for 'A' is 65
-
             // Generate a random number between 1 and 7
-
             var randomNumber = (moveCount == 0 ? Math.floor(Math.random() * 1) + 1 : Math.floor(Math.random() * 9) + 1);
-            
-
             // Combine the random letter and number into a pair
             var randomPair = randomLetter + randomNumber;
+
+
+            // Function to perform a 2D random walk
+            // const matrixWidth = 9;
+            // const matrixHeight = 7;
+            // function randomWalk(steps) {
+            //     let x = Math.floor(Math.random() * matrixWidth);
+            //     let y = Math.floor(Math.random() * matrixHeight);
+
+            //     console.log(`Starting position: (${x}, ${y})`);
+
+            //     for (let i = 0; i < steps; i++) {
+            //         const direction = Math.floor(Math.random() * 4); // 0: up, 1: down, 2: left, 3: right
+
+            //         switch (direction) {
+            //             case 0:
+            //                 if (y > 0) y--;
+            //                 break;
+            //             case 1:
+            //                 if (y < matrixHeight - 1) y++;
+            //                 break;
+            //             case 2:
+            //                 if (x > 0) x--;
+            //                 break;
+            //             case 3:
+            //                 if (x < matrixWidth - 1) x++;
+            //                 break;
+            //         }
+
+            //         console.log(`Step ${i + 1}: Moved to (${x}, ${y})`);
+            //     }
+            // }
+
 
             //clear circle
 
@@ -258,16 +291,20 @@
 
             document.getElementById(`${randomPair}`).classList.add("circle");
 
+            // add to the movement counter
             moveCount++
-
+            //check if the sequence is finished or not
             if (moveCount == (parseInt(myAnswers[0]) + 1)) {
                 clearInterval(MoveInterval)
-                document.getElementById("move").textContent = "ruta terminada!!!"
                 tellMove.text = "ruta terminada!!!"
-                window.speechSynthesis.speak(tellMove)
+                setTimeout(() => {
+                    document.getElementById("move").textContent = "ruta terminada!!!"
+                    window.speechSynthesis.speak(tellMove);
+                }, "3000");
+
             }
 
-            return randomPair
+            //return randomPair
         }
     </script>
     <style>
