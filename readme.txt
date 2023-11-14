@@ -1,3 +1,5 @@
+Project to draft an idea for a climbing sequence generator 
+
 Board Set Up
 
    A   B   C   D   E   F   G
